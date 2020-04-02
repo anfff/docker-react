@@ -1,0 +1,18 @@
+# give superuser permissions
+sudo: require
+
+# installing a copy of docker into running container
+services:
+    - docker
+
+# activities before starting the tests or deploying project
+before_install:
+    # build docker image
+    - docker build -f -t bartek26/docker-react Dockerfile.dev .
+
+    #becasue we can't use container id (randomly generated), so we identify container by tag for example:
+                                                                    #-t docker_username/docker_repo_on_git (good convention)
+
+# commands used to run tests
+script:
+  - docker run -e CI=true bartek26/docker-react npm run test
