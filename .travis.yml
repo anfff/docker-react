@@ -8,7 +8,7 @@ services:
 # activities before starting the tests or deploying project
 before_install:
     # build docker image
-    - docker build -f -t bartek26/docker-react Dockerfile.dev .
+    - docker build -t bartek26/docker-react -f Dockerfile.dev .
 
     #becasue we can't use container id (randomly generated), so we identify container by tag for example:
                                                                     #-t docker_username/docker_repo_on_git (good convention)
