@@ -20,3 +20,17 @@ script:
     # foreach command here Travis will be watching the output, if some command
     # return status code != 0 than Travis assume that as build failed
 - docker run -e CI=true 0123581119/docker-react npm run test
+
+# deploying the application on the selected platform 
+    deploy:
+        edge: true
+        provider: elasticbeanstalk
+        region: "us-east-2"
+        app: "docker"
+        env: "Docker-env"
+        bucket_name: "elasticbeanstalk-us-east-2-820747500924"
+        bucket_path: "docker"
+        on:
+          branch: master
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
