@@ -6,7 +6,7 @@
   WORKDIR '/app'
 
   # COPY json package
-  COPY package.json .
+  COPY package*.json ./
 
   # INSTALL DEPENDENCIES
   RUN npm install
@@ -21,7 +21,7 @@
   # BASE IMAGE - name build stage
   FROM nginx
 
-  # 
+  # EXPOSE PORT
   EXPOSE 80
 
   # COPY RESULT OF BUILD PHASE called builder from folder /app/build/ to specified folder from nginx documentation
