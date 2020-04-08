@@ -1,12 +1,13 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Update": "false"
+    "Name": "***.eu-central-1.amazonaws.com/***:latest",
+    "Update": "true"
   },
   "Ports": [
     {
-      "ContainerPort": "80",
-      "HostPort": 8000
+      "ContainerPort": "5000"
     }
-  ]
+  ],
+  "Logging": "/var/log/nginx"
 }
