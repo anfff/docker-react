@@ -2,7 +2,6 @@
   "AWSEBDockerrunVersion": "1",
   "Image": {
     "Name": "***.us-east-2.amazonaws.com/***:latest",
-    "Update": "true"
   },
   "Ports": [
     {
