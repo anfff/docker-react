@@ -9,7 +9,6 @@ services:
 # we want to build our docker image before test run
 before_install:
   - docker build -t bartek26/docker-react -f Dockerfile.dev .
-  - docker push bartek26/docker-react
 
 # becasue we can't use container id (randomly generated), so we identify container by tag for example:
 # -t docker_username/docker_repo_on_git (good convention)
