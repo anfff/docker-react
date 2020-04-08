@@ -8,7 +8,7 @@ services:
 # Series of setup that needs to occur before start of testing / deploying project
 # we want to build our docker image before test run
 before_install:
-  - docker build -t 0123581119/docker-react -f Dockerfile.dev .
+  - docker build -t bartek26/docker-react -f Dockerfile.dev .
 
 # becasue we can't use container id (randomly generated), so we identify container by tag for example:
 # -t docker_username/docker_repo_on_git (good convention)
@@ -19,7 +19,7 @@ before_install:
 script:
     # foreach command here Travis will be watching the output, if some command
     # return status code != 0 than Travis assume that as build failed
-  - docker run -e CI=true 0123581119/docker-react npm run test
+  - docker run -e CI=true bartek26/docker-react npm run test
 
 # deploying the application on the selected platform
 deploy:
