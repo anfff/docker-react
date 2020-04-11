@@ -23,7 +23,7 @@
   FROM nginx
 
   # EXPOSE PORT
-  EXPOSE 3000
+  EXPOSE 5000
 
   # COPY RESULT OF BUILD PHASE called builder from folder /app/build/ to specified folder from nginx documentation
   COPY --from=builder /app/build /usr/share/nginx/html
